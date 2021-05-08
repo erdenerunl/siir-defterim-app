@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="container home-content">
+    <div class="container content-section">
       <div class="my-bio-wrapper row flex-row">
         <div class="bio-image-wrapper col-lg-4 col-md-3 col-sm-12">
           <div
@@ -11,7 +11,7 @@
           </div>
         </div>
         <div class="bio-desc col-lg-8 col-md-9 col-sm-12">
-          <div class="bio-desc-header text-center">
+          <div class="bio-header text-center">
             <h1>HEADER EXAMPLE</h1>
           </div>
           <div class="bio-desc-desc mt-3">
@@ -31,7 +31,7 @@
       <div
         class="my-citation-wrapper row d-flex flex-column justify-content-center align-items-center"
       >
-        <div class="my-citation-header">
+        <div class="my-header">
           <h2>Alıntılar</h2>
         </div>
         <div class="my-citationlist">
@@ -59,11 +59,11 @@
           </div>
         </div>
       </div>
-      <div class="my-poems-home mb-3">
-        <div class="my-citation-header">
+      <div class="my-poems-home">
+        <div class="my-header">
           <h2>Şiir Listem</h2>
         </div>
-        <div class="my-poemlist mb-4">
+        <div class="my-poemlist pb-3">
           <div class="row">
             <div class="poem col-lg-4 col-md-6 col-sm-12">
               <a href="#">Lorem ipsum dolor sit.</a>
@@ -107,7 +107,7 @@ export default {
 .wrapper {
   height: auto;
 }
-.home-content {
+.content-section {
   margin-top: 1px;
   position: relative;
   z-index: 2;
@@ -165,10 +165,7 @@ export default {
     }
   }
 }
-div.my-citation-header {
-  text-align: center;
-  margin: 1.5rem 0;
-}
+
 .my-citationlist {
   margin: 15px;
 

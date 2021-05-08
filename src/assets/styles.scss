@@ -10,6 +10,7 @@ body {
     height: 100%;
 }
 
+$bg-color: #1a1a1a;
 $border-color: #d3d3d3;
 $border-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
@@ -65,4 +66,9 @@ div.container {
 .row {
     padding: 0 !important;
     margin: 0 !important;
+}
+
+.my-header {
+    text-align: center;
+    padding: 1.5rem 0;
 }

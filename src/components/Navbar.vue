@@ -6,8 +6,9 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav">
-      <li class="nav-item">
+    <ul class="navbar-nav d-flex justify-content-between w-100">
+      <div class="left-navbar d-flex">
+        <li class="nav-item">
         <router-link to="/" class="nav-link">Anasayfa
           <span class="sr-only">(current)</span>
         </router-link>
@@ -16,6 +17,13 @@
         <router-link class="nav-link" to="/panel">Şiirlerim
         </router-link>
       </li>
+      </div>
+      <div class="right-navbar">
+        <li class="nav-item">
+        <router-link class="nav-link" to="/add-poem">Şiir Ekle
+        </router-link>
+      </li>
+      </div>
     </ul>
   </div>
 </nav>
