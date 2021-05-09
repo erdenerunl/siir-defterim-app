@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import AddPoemComponent from "@/components/AddPoemComponent.vue";
+import AddPoemComponent from "@/components/pageComponents/AddPoemComponent.vue";
 export default {    
     components: {
         "app-add-poem" :AddPoemComponent 

@@ -8,12 +8,12 @@ const routes = [
     component: Home
   },
   {
-    path: '/panel',
+    path: '/panel/:poemId',
     name: 'Panel',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "panel" */ '../views/Panel.vue')
+    component: () => import(/* webpackChunkName: "Panel" */ '../views/Panel.vue'),
   },
   {
     path: '/add-poem',

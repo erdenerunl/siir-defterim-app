@@ -16,6 +16,10 @@ $border-color: #d3d3d3;
 $border-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 $input-border: 1px solid #ced4da;
 
+h2 {
+    text-transform: none !important;
+}
+
 div.container {
     padding: 0;
 }
@@ -78,4 +82,8 @@ div.container {
 input, textarea {
     border: $input-border;
 }
+.content-section {
+    height: 100%;
+    min-height: 771px;
+  }
 

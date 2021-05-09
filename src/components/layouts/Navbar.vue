@@ -14,7 +14,7 @@
         </router-link>
       </li>
       <li class="nav-item">
-        <router-link class="nav-link" to="/panel">Şiirlerim
+        <router-link class="nav-link" :to="`/panel/${specificIndex}`">Şiirlerim
         </router-link>
       </li>
       </div>
@@ -31,7 +31,12 @@
 
 <script>
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  data() {
+    return {
+      specificIndex: 4
+    }
+  }
 }
 </script>
 

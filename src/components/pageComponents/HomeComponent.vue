@@ -6,7 +6,7 @@
           <div
             class="bio-image d-flex flex-column justify-content-center align-items-center"
           >
-            <img src="../assets/images/bio-image.jpg" alt="bio-image" />
+            <img src="@/assets/images/bio-image.jpg" alt="bio-image" />
             <h4 class="bio-image-name">Erdener Ünal</h4>
           </div>
         </div>
@@ -66,7 +66,7 @@
         <div class="my-poemlist pb-3">
           <div class="row">
             <div class="poem col-lg-4 col-md-6 col-sm-12" v-for="(poem, index) in poemList" :key="index">
-              <a href="#">{{index + 1}}. {{poem.header }}</a>
+              <div @click="$router.push(`/panel/${poem.id}`)">{{index + 1}}. {{poem.header }}</div>
             </div>
             <!-- <div class="poem col-lg-4 col-md-6 col-sm-12">
               <a href="#">Lorem ipsum dolor sit.</a>
@@ -103,9 +103,6 @@ export default {
 
     }
   },
-  created() {
-      this.$store.dispatch('initApp')
-  },
   computed: {
     ...mapGetters({
       poemList : '_poemList' 
@@ -115,7 +112,7 @@ export default {
 </script>
 
 <style  lang="scss">
-@import "../assets/styles.scss";
+@import "@/assets/styles.scss";
 
 .wrapper {
   height: auto;
@@ -197,7 +194,8 @@ export default {
   justify-content: center;
   align-items: center;
 
-  a {
+  div {
+    cursor: pointer;
     text-decoration: none;
     transition: 100ms ease-in-out;
 
