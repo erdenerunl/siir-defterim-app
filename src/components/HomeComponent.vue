@@ -65,7 +65,10 @@
         </div>
         <div class="my-poemlist pb-3">
           <div class="row">
-            <div class="poem col-lg-4 col-md-6 col-sm-12">
+            <div class="poem col-lg-4 col-md-6 col-sm-12" v-for="(poem, index) in poemList" :key="index">
+              <a href="#">{{index + 1}}. {{poem.header }}</a>
+            </div>
+            <!-- <div class="poem col-lg-4 col-md-6 col-sm-12">
               <a href="#">Lorem ipsum dolor sit.</a>
             </div>
             <div class="poem col-lg-4 col-md-6 col-sm-12">
@@ -81,11 +84,8 @@
               <a href="#">Lorem ipsum dolor sit.</a>
             </div>
             <div class="poem col-lg-4 col-md-6 col-sm-12">
-              <a href="#">Lorem ipsum dolor sit.</a>
-            </div>
-            <div class="poem col-lg-4 col-md-6 col-sm-12">
-              <a href="#">Lorem ipsum dolor sit.</a>
-            </div>
+              <a href="#">Lorem ipsum dolor sit.</a> -->
+            <!-- </div> -->
           </div>
         </div>
       </div>
@@ -95,9 +95,22 @@
 
 <script>
 // @ is an alias to /src
-
+import { mapGetters } from 'vuex'
 export default {
   name: "Home",
+  data() {
+    return {
+
+    }
+  },
+  created() {
+      this.$store.dispatch('initApp')
+  },
+  computed: {
+    ...mapGetters({
+      poemList : '_poemList' 
+    })
+  }
 };
 </script>
 

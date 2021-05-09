@@ -1,6 +1,6 @@
 <template>
   <div class="footer-wrapper">
-      <div class="col-12 footer-container">
+      <div class="col-12 footer-container p-3">
           <span>© | 2021 | Bu site Erdener Ünal tarafından Erdener Ünal için hazırlanmıştır. Tüm hakları sakladır.</span>
       </div>
   </div>
@@ -18,7 +18,7 @@ export default {
 .footer-wrapper {
     position: relative;
     width: 100%;
-    height: 75px;
+    height: 80px;
     color: white;
     clear: both;
 

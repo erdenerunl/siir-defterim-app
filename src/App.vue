@@ -14,7 +14,7 @@
 import AppFooter from './components/Footer';
 import Navbar from "./components/Navbar";
 import BackgroundComponent from './components/BackgroundComponent';
-
+import {mapGetters} from 'vuex'
 export default {
   components: {
     AppFooter,
@@ -26,15 +26,16 @@ export default {
 </script>
 
 <style lang="scss">
-html, body, .global-wrap {
+html, body {
   height: 100%;
 }
 .global-wrap {
   position: relative;
-  height: auto;
+  height: 100%;
   min-height: calc(100vh - 75px);
 }
 .mid-wrap {
-  margin-bottom: 75px;
+  height: 100%;
 }
+
 </style>
