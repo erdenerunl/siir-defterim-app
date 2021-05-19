@@ -20,11 +20,11 @@
               aliquam distinctio impedit in delectus eum nulla exercitationem.
               Natus, quidem perferendis.</span
             >
-            <div class="button-div">
+            <!-- <div class="button-div">
               <router-link to="/panel" class="btn btn-primary"
                 >Şiirlere git</router-link
               >
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -65,27 +65,9 @@
         </div>
         <div class="my-poemlist pb-3">
           <div class="row">
-            <div class="poem col-lg-4 col-md-6 col-sm-12" v-for="(poem, index) in poemList" :key="index">
-              <div @click="$router.push(`/panel/${poem.id}`)">{{index + 1}}. {{poem.header }}</div>
+            <div class="poem col-lg-4 col-md-6 col-sm-12" v-for="(poem, index) in poemList" :key="poem.id">
+              <router-link class="to-poem" :to="`/panel/${poem.id}`">{{index + 1}}. {{poem.header }}</router-link>
             </div>
-            <!-- <div class="poem col-lg-4 col-md-6 col-sm-12">
-              <a href="#">Lorem ipsum dolor sit.</a>
-            </div>
-            <div class="poem col-lg-4 col-md-6 col-sm-12">
-              <a href="#">Lorem ipsum dolor sit.</a>
-            </div>
-            <div class="poem col-lg-4 col-md-6 col-sm-12">
-              <a href="#">Lorem ipsum dolor sit.</a>
-            </div>
-            <div class="poem col-lg-4 col-md-6 col-sm-12">
-              <a href="#">Lorem ipsum dolor sit.</a>
-            </div>
-            <div class="poem col-lg-4 col-md-6 col-sm-12">
-              <a href="#">Lorem ipsum dolor sit.</a>
-            </div>
-            <div class="poem col-lg-4 col-md-6 col-sm-12">
-              <a href="#">Lorem ipsum dolor sit.</a> -->
-            <!-- </div> -->
           </div>
         </div>
       </div>
@@ -106,7 +88,10 @@ export default {
   computed: {
     ...mapGetters({
       poemList : '_poemList' 
-    })
+    }),
+  },
+  methods: {
+    
   }
 };
 </script>
@@ -194,7 +179,7 @@ export default {
   justify-content: center;
   align-items: center;
 
-  div {
+  .to-poem {
     cursor: pointer;
     text-decoration: none;
     transition: 100ms ease-in-out;

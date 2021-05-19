@@ -14,7 +14,7 @@
 import AppFooter from './components/layouts/Footer';
 import Navbar from "./components/layouts/Navbar";
 import BackgroundComponent from './components/layouts/BackgroundComponent';
-import {mapGetters} from 'vuex'
+
 
 export default {
   components: {
@@ -23,13 +23,8 @@ export default {
     BackgroundComponent
   },
   created() {
-      this.$store.dispatch('initApp');
-  },
-  computed: {
-    ...mapGetters({
-      poemList : '_poemList' 
-    })
-  }
+    this.$store.dispatch('initApp');
+    }
 }
 
 </script>
