@@ -78,13 +78,24 @@ export default {
     addPoem() {
       this.$store.dispatch('setPoemToDataBase', this.poem);
       this.clearInputs();
+      this.$toast.success('Şiir Eklendi!', {position: "top-right"})
+    },
+    addCitation() {
+      this.$store.dispatch('setCitationToDataBase', this.citation);
+      this.clearInputs();
+      this.$toast.success('Alıntı Eklendi!', {position: "top-right"})
     },
     clearInputs() {
       this.poem = {
         header: "",
         date: "",
         body: "",
-      }
+      };
+      this.citation = {
+        header: "",
+        date: "",
+        body: "",
+      };
     }
   }
 };

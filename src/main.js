@@ -8,8 +8,11 @@ import "@/assets/styles.scss"
 
 // GLOBAL COMPONENTS
 
+import Toaster from "@meforma/vue-toaster";
+
 
 createApp(App)
 .use(store)
 .use(router)
+.use(Toaster)
 .mount('#app')

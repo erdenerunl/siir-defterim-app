@@ -12,8 +12,14 @@ export default createStore({
     fillPoemList(state, initPoemList) {
       state.poemList = initPoemList;
     },
+    fillCitationList(state, initCitationList) {
+      state.citationList = initCitationList
+    },
     setPoemToUI(state, newPoem){
       state.poemList.push(newPoem);
+    },
+    setCitationToUI(state, newCitation){
+      state.citationList.push(newCitation);
     },
     setPoemDetailsToUI(state, poemDetails) {
       state.poemDetails = poemDetails;
@@ -27,10 +33,20 @@ export default createStore({
       }).catch(err => {
         console.log(err)
       })
+      axios.get("http://localhost:3000/citationList").then(resp => {
+        commit("fillCitationList", resp.data || [])
+      }).catch(err => {
+        console.log(err)
+      })
     },
     setPoemToDataBase({commit}, newPoem) {
       axios.post("http://localhost:3000/poemList", newPoem).then(resp => {
         commit('setPoemToUI', resp.data || [])
+      })
+    },
+    setCitationToDataBase({commit}, newCitation) {
+      axios.post("http://localhost:3000/citationList", newCitation).then(resp => {
+        commit('setCitationToUI', resp.data || [])
       })
     },
     getPoemDetails({commit, state}, poemId) {
@@ -42,6 +58,7 @@ export default createStore({
   },
   getters: {
     _poemList: state => state.poemList,
+    citationList: state => state.citationList,
     poemDetails: state => state.poemDetails
   },
   

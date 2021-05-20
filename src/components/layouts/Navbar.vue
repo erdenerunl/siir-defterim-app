@@ -17,7 +17,7 @@
         </div>
         <div class="right-navbar">
           <li class="nav-item">
-            <router-link class="nav-link" to="/add-poem">Şiir Ekle </router-link>
+            <router-link class="nav-link" to="/add-poem">Şiir/Alıntı Ekle </router-link>
           </li>
         </div>
       </ul>

@@ -3,9 +3,7 @@
     <div class="container content-section">
       <div class="my-bio-wrapper row flex-row">
         <div class="bio-image-wrapper col-lg-4 col-md-3 col-sm-12">
-          <div
-            class="bio-image d-flex flex-column justify-content-center align-items-center"
-          >
+          <div class="bio-image d-flex flex-column justify-content-center align-items-center">
             <img src="@/assets/images/bio-image.jpg" alt="bio-image" />
             <h4 class="bio-image-name">Erdener Ünal</h4>
           </div>
@@ -15,11 +13,7 @@
             <h1>HEADER EXAMPLE</h1>
           </div>
           <div class="bio-desc-desc mt-3">
-            <span
-              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-              aliquam distinctio impedit in delectus eum nulla exercitationem.
-              Natus, quidem perferendis.</span
-            >
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aliquam distinctio impedit in delectus eum nulla exercitationem. Natus, quidem perferendis.</span>
             <!-- <div class="button-div">
               <router-link to="/panel" class="btn btn-primary"
                 >Şiirlere git</router-link
@@ -28,35 +22,12 @@
           </div>
         </div>
       </div>
-      <div
-        class="my-citation-wrapper row d-flex flex-column justify-content-center align-items-center"
-      >
+      <div class="my-citation-wrapper row d-flex flex-column justify-content-center align-items-center">
         <div class="my-header">
           <h2>Alıntılar</h2>
         </div>
         <div class="my-citationlist">
-          <div class="row d-flex justify-content-center">
-            <div class="citation col-lg-5 col-md-12 col-sm-12">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-              inventore praesentium ipsum nemo nulla a obcaecati mollitia est
-              quos dignissimos!
-            </div>
-            <div class="citation col-lg-5 col-md-12 col-sm-12">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-              inventore praesentium ipsum nemo nulla a obcaecati mollitia est
-              quos dignissimos!
-            </div>
-            <div class="citation col-lg-5 col-md-12 col-sm-12">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-              inventore praesentium ipsum nemo nulla a obcaecati mollitia est
-              quos dignissimos!
-            </div>
-            <div class="citation col-lg-5 col-md-12 col-sm-12">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-              inventore praesentium ipsum nemo nulla a obcaecati mollitia est
-              quos dignissimos!
-            </div>
-          </div>
+          <app-citation :citationList="citationList"></app-citation>
         </div>
       </div>
       <div class="my-poems-home">
@@ -66,7 +37,7 @@
         <div class="my-poemlist pb-3">
           <div class="row">
             <div class="poem col-lg-4 col-md-6 col-sm-12" v-for="(poem, index) in poemList" :key="poem.id">
-              <router-link class="to-poem" :to="`/panel/${poem.id}`">{{index + 1}}. {{poem.header }}</router-link>
+              <router-link class="to-poem" :to="`/panel/${poem.id}`">{{ index + 1 }}. {{ poem.header }}</router-link>
             </div>
           </div>
         </div>
@@ -76,23 +47,23 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import { mapGetters } from 'vuex'
+import appCitation from "../pageComponents/CitationComponent";
+import { mapGetters } from "vuex";
 export default {
   name: "Home",
+  components: {
+    appCitation,
+  },
   data() {
-    return {
-
-    }
+    return {};
   },
   computed: {
     ...mapGetters({
-      poemList : '_poemList' 
+      poemList: "_poemList",
+      citationList: "citationList"
     }),
   },
-  methods: {
-    
-  }
+  methods: {},
 };
 </script>
 
@@ -125,12 +96,18 @@ export default {
         max-width: 100%;
         height: auto;
         border-radius: 50%;
-        padding-top: 1rem;
+        margin-top: 1rem;
       }
 
       .bio-image-name {
         letter-spacing: 0;
         padding: 0.75rem 0 0 0;
+      }
+
+      @media screen and (max-width: 1000px) {
+        .bio-image-name {
+          font-size: 1rem;
+        }
       }
     }
 
@@ -139,7 +116,7 @@ export default {
       position: relative;
       flex-direction: column;
       align-items: center;
-      padding-top: 1rem;
+      padding: 1rem;
 
       .bio-desc-desc {
         height: 100%;
@@ -161,18 +138,6 @@ export default {
   }
 }
 
-.my-citationlist {
-  margin: 15px;
-
-  .citation {
-    margin: 0.75rem;
-    padding: 1.5rem;
-    border: 1px solid $border-color;
-    border-radius: 10px;
-    background-color: whitesmoke;
-    box-shadow: $border-shadow;
-  }
-}
 .poem {
   padding: 1rem;
   display: flex;
